@@ -13,8 +13,8 @@ on:
   schedule:
     - cron: 0 20 * * *
   push:
-    tags:
-      - '*'
+    branches: 
+      - 200416
 
 jobs:
 
@@ -27,7 +27,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: master
+          ref: 200416
 
       - name: Space cleanup
         env:
@@ -72,7 +72,7 @@ jobs:
         run: find ./bin/targets/ -type d -name "packages" | xargs rm -rf {}
 
       - name: Upload artifact
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@200416
         with:
           name: OpenWrt_firmware
           path: ./bin/targets/
