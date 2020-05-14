@@ -72,7 +72,7 @@ jobs:
         run: find ./bin/targets/ -type d -name "packages" | xargs rm -rf {}
 
       - name: Upload artifact
-        uses: actions/upload-artifact@200416
+        uses: actions/upload-artifact@master
         with:
           name: OpenWrt_firmware
           path: ./bin/targets/
